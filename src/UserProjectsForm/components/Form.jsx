@@ -15,7 +15,7 @@ const newProejctTemplate = {
 
 const Form = ({ onSubmit, initialValues, children }) => {
   const [values, setValues] = useState(initialValues || {});
-  // TODO
+  // TODO: error handling
   const [errors, setError] = useState({});
 
   const handleInputChange = (e) => {
