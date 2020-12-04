@@ -42,6 +42,7 @@ const UserProjectsForm = ({ initialValues }) => {
                 <FieldSet.ProjectDetailsList
                   projects={values.projects}
                   handleInputChange={handleInputChange}
+                  createNewProject={createNewProject}
                 />
               </>
             ) : (

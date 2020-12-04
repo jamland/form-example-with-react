@@ -33,6 +33,12 @@ const Form = ({ onSubmit, initialValues, children }) => {
       const field = name.split(".")[1];
       const index = +name.match(/\[(.*?)\]/)[1];
 
+      // TODO:
+      // Simplest solution is to set values via IFs, like:
+      // if (field === 'title') ...
+      // else if (field === 'duration.value') ...
+      // else if (field === 'duration.units') ...
+
       const updatedProjects = values.projects.map((el, idx) => {
         if (idx === index) {
           return {
@@ -54,7 +60,7 @@ const Form = ({ onSubmit, initialValues, children }) => {
     onSubmit(values);
   };
 
-  const createNewProject = (value) => {
+  const createNewProject = (value = "") => {
     setValues((prevState) => ({
       ...prevState,
       projects: [

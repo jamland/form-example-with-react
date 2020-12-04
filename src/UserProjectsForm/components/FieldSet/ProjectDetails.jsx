@@ -3,13 +3,9 @@ import React from "react";
 export const ProjectDetails = ({ project, index, onChange }) => {
   return (
     <fieldset style={{ background: "#f8f8f8", padding: "1em" }}>
-      <input
-        name={`projects[${index}].title`}
-        placeholder="Title"
-        type="text"
-        onChange={onChange}
-        value={project.title}
-      />
+      <select name={`projects[${index}].title`}>
+        <option value={project.title}>{project.title}</option>
+      </select>
 
       <textarea
         name={`projects[${index}].description`}
@@ -29,15 +25,13 @@ export const ProjectDetails = ({ project, index, onChange }) => {
             disabled
           />
         </div>
+
         <div className="column">
-          <input
-            placeholder="Units"
-            type="text"
-            name={`projects[${index}].duration.units`}
-            onChange={onChange}
-            value={project.duration?.units}
-            disabled
-          />
+          <select name={`projects[${index}].duration.units`}>
+            <option value={project.duration?.units}>
+              {project.duration?.units}
+            </option>
+          </select>
         </div>
       </div>
     </fieldset>
